@@ -1,10 +1,10 @@
 const data = {
   products: [
     {
-      name: "Invisibility Cap",
-      slug: "invisible-cap",
+      name: "Yankees Cap",
+      slug: "yankees-cap",
       category: "Caps",
-      image: "/images/p1.jpeg",
+      image: "/images/p2.webp",
       price: "250",
       countInStock: 1,
       brand: "Olympus",

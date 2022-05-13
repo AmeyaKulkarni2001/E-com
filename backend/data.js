@@ -8,7 +8,7 @@ const data = {
       price: "250",
       countInStock: 1,
       brand: "Olympus",
-      rating: 5,
+      rating: 4,
       numReviews: 1,
       description: "Cap that makes you invisible",
     },

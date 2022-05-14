@@ -16,6 +16,10 @@ import { Store } from "./Store";
 
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
+import ShippingAddressScreen from "./screens/ShippingAddressScreen";
+import SignupScreen from "./screens/SignupScreen";
+import PaymentMethodScreen from "./screens/PaymentMethodScreen";
+import PlaceOrderScreen from "./screens/PlaceOrderScreen";
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Button";
 
@@ -26,6 +30,8 @@ function App() {
   const signoutHandler = () => {
     ctxDispatch({ type: "USER_SIGNOUT" });
     localStorage.removeItem("userInfo");
+    localStorage.removeItem("shippingAddress");
+    localStorage.removeItem("paymentmethod");
   };
   return (
     <BrowserRouter>
@@ -75,6 +81,10 @@ function App() {
             <Route path="/product/:slug" element={<ProductScreen />} />
             <Route path="/cart" element={<CartScreen />} />
             <Route path="/signin" element={<SigninScreen />} />
+            <Route path="/shipping" element={<ShippingAddressScreen />} />
+            <Route path="/signup" element={<SignupScreen />} />
+            <Route path="/payment" element={<PaymentMethodScreen />} />
+            <Route path="/placeorder" element={<PlaceOrderScreen />} />
           </Routes>
         </Container>
       </div>

@@ -1,21 +1,32 @@
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import HomeScreen from "./screens/HomeScreen";
 import ProductScreen from "./screens/ProductScreen";
+
 import NavBar from "react-bootstrap/Navbar";
 import Badge from "react-bootstrap/Badge";
 import Nav from "react-bootstrap/Nav";
 import Container from "react-bootstrap/Container";
+import Dropdown from "react-bootstrap/Dropdown";
+// import Button from "react-bootstrap/Button";
+import SplitButton from "react-bootstrap/SplitButton";
+
 import { LinkContainer } from "react-router-bootstrap";
 import { useContext } from "react";
 import { Store } from "./Store";
+
 import CartScreen from "./screens/CartScreen";
 import SigninScreen from "./screens/SigninScreen";
 // import Button from "react-bootstrap/Button";
 // import Card from "react-bootstrap/Button";
 
 function App() {
-  const { state } = useContext(Store);
-  const { cart } = state;
+  const { state, dispatch: ctxDispatch } = useContext(Store);
+  const { cart, userInfo } = state;
+
+  const signoutHandler = () => {
+    ctxDispatch({ type: "USER_SIGNOUT" });
+    localStorage.removeItem("userInfo");
+  };
   return (
     <BrowserRouter>
       <div className="d-flex flex-column">
@@ -34,6 +45,26 @@ function App() {
                     </Badge>
                   )}
                 </Link>
+                {userInfo ? (
+                  <SplitButton variant="secondary" title={userInfo.name}>
+                    <Dropdown.Item eventKey="1">
+                      <Link to="/profile">User Profile</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Item eventKey="2">
+                      <Link to="/orderhistory">Order History</Link>
+                    </Dropdown.Item>
+                    <Dropdown.Divider />
+                    <Dropdown.Item eventKey="2">
+                      <Link onClick={signoutHandler} to="#signout">
+                        Sign Out
+                      </Link>
+                    </Dropdown.Item>
+                  </SplitButton>
+                ) : (
+                  <Link className="nav-link" to="/signin">
+                    Signin
+                  </Link>
+                )}
               </Nav>
             </Container>
           </NavBar>

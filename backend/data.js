@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: "1",
       name: "Yankees Cap",
       slug: "yankees-cap",
       category: "Caps",
@@ -13,24 +14,26 @@ const data = {
       description: "Cap that makes you invisible",
     },
     {
+      _id: "2",
       name: "Invisibility Cap",
       slug: "invisible-cap",
       category: "Caps",
       image: "/images/p1.jpeg",
       price: "250",
-      countInStock: 1,
+      countInStock: 10,
       brand: "Olympus",
       rating: 5,
       numReviews: 1,
       description: "Cap that makes you invisible",
     },
     {
+      _id: "3",
       name: "Invisibility Cap",
       slug: "invisible-cap",
       category: "Caps",
       image: "/images/p1.jpeg",
       price: "250",
-      countInStock: 1,
+      countInStock: 10,
       brand: "Olympus",
       rating: 5,
       numReviews: 1,

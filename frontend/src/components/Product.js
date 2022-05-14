@@ -26,7 +26,7 @@ const Product = (props) => {
               <strong>{product.price}</strong>
             </Card.Text>
           </Link>
-          <Button>Add to cart</Button>
+          {/* <Button variant="secondary">Add to cart</Button> */}
         </Card.Body>
       </div>
     </Card>

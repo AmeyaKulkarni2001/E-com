@@ -6,7 +6,7 @@ const data = {
       category: "Caps",
       image: "/images/p2.webp",
       price: "250",
-      countInStock: 1,
+      countInStock: 0,
       brand: "Olympus",
       rating: 4,
       numReviews: 1,

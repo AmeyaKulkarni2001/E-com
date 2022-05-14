@@ -11,12 +11,14 @@ const Product = (props) => {
       style={{ width: "25rem" }}
       className="d-inline-flex flex-row justify-content-center"
     >
-      <img
-        style={{ width: "18rem" }}
-        src={product.image}
-        alt={product.name}
-        className="card-img-top"
-      />
+      <Link to={`/product/${product.slug}`}>
+        <img
+          style={{ width: "18rem" }}
+          src={product.image}
+          alt={product.name}
+          className="card-img-top"
+        />
+      </Link>
       <div>
         <Card.Body>
           <Link to={`/product/${product.slug}`}>
@@ -26,6 +28,11 @@ const Product = (props) => {
               <strong>{product.price}</strong>
             </Card.Text>
           </Link>
+          {product.countInStock === 0 && (
+            <Button disabled variant="light">
+              Out Of stock
+            </Button>
+          )}
           {/* <Button variant="secondary">Add to cart</Button> */}
         </Card.Body>
       </div>

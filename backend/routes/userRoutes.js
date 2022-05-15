@@ -68,5 +68,8 @@ userRouter.put(
     }
   })
 );
-
+userRouter.get("/", async (req, res) => {
+  const users = await User.find();
+  res.send(users.map((user) => user.name));
+});
 export default userRouter;
